@@ -5,9 +5,10 @@
 
 .block h2 {
     color: #fff;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     margin: 0;
+    padding-bottom: .5rem;
 }
 
 .block #block-text {
@@ -28,5 +29,5 @@
 .block .stats .block-stat h3 {
     color: #fff;
     font-weight: 800;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
