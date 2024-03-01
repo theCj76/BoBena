@@ -1,4 +1,4 @@
-@import 'globals.css';
+@import '/CSS/globals.css';
 
 /* Home page */
 @import '/CSS/homepage/hero.css';
