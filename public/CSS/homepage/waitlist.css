@@ -120,6 +120,7 @@
         'opsz' 24;
         font-size: 2rem;
         color:#6671ee;
+        cursor: pointer;
     }
 }
 
