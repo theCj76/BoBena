@@ -1,0 +1,67 @@
+.track {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 60%;
+    background-color: #fff;
+    border-radius: 5%;
+    padding: 2rem;
+
+    .tab{
+        display: none;
+
+    }
+
+    #button-overlay {
+        overflow:auto;
+    }
+
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+        cursor: pointer;
+    }
+
+    .multi-select {
+        margin-bottom: 1rem;
+
+        input {
+            width: 5%;
+            height: 18%;
+            margin: 0;
+        }
+
+        label {
+            margin-top: 0rem;
+            font-size: 1.3rem;
+
+        }
+
+
+        p {
+            margin-bottom: 0rem;
+            font-size: 1.5rem;
+
+        }   
+    
+    }
+
+    @media (max-width: 600px){
+        .radio-btns input {
+            width: 40%;
+          
+        }
+    }
+
+    .invalid {
+        background-color: #a84a4a;
+    }
+
+
+
+}

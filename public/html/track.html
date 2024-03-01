@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  
+  <link rel="stylesheet" type="text/css" href='/CSS/styles.css'/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+    <title>BoBena - Pet Tracker </title>
+
+</head> 
+
+<body>
+
+  <div class="track">
+    <form id="regForm" action="/track" method="POST">
+      <div id="button-overlay"><span class="material-symbols-outlined" type="button" id="prevBtn" onclick="nextPrev(-1)">
+        undo
+        </span>
+      </div>
+      <div class="tab">
+        <label for="Pet">Pet Name</label>
+        <input type="pet" id="pet" name="pet" required>
+        <label for="Time">Time</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <div class="tab">
+        <div class="multi-select">
+          <p>Feeding</p>
+            <input type="radio" id="Breakfast" name="feed" value="Breakfast">
+            <label for="Breakfast">Breakfast</label>
+            <input type="radio" id="Lunch" name="feed" value="Lunch">
+            <label for="Lunch">Lunch</label>
+            <input type="radio" id="Dinner" name="feed" value="Dinner">
+            <label for="Dinner">Dinner</label>
+        </div>
+        <div>
+          <label for="meds">Medication</label>
+          <input type="meds" id="meds" name="meds">
+        </div>
+      </div>
+      <div class="tab">
+        <div class="multi-select">
+          <p>Bathroom</p>
+            <input type="radio" id="pee" name="bathroom" value="pee">
+            <label for="pee">Pee</label>
+            <input type="radio" id="poo" name="bathroom" value="poo">
+            <label for="poo">Poo</label>
+            <input type="radio" id="both" name="bathroom" value="both">
+            <label for="both">Both</label>
+          </div>
+        <div>
+          <div class="multi-select">
+            <p>Activity</p>
+              <div>
+                <input type="checkbox" id="walk" name="activity" value="walk">
+                <label for="walk">Walk</label>
+              </div>
+              <div>
+                <input type="checkbox" id="" name="activity" value="outside time">
+                <label for="outside time">Outside time</label>
+              </div>
+              <div>
+                <input type="checkbox" id="" name="activity" value="playtime-with-staff">
+                <label for="playtime-with-staff">Playtime with staff</label>
+              </div>
+              <div>
+                <input type="checkbox" id="playtime-with-dogs" name="activity" value="playtime-with-dogs">
+                <label for="playtime-with-dogs">Playtime with dogs</label>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="tab">
+        <div class="multi-select">
+          <p>Mood</p>
+            <div>
+              <input type="checkbox" id="happy" name="mood" value="happy">
+              <label for="happy">Happy</label>
+            </div>
+            <div>
+              <input type="checkbox" id="sleepy" name="mood" value="sleepy">
+              <label for="sleepy">Sleepy</label>
+            </div>
+            <div>
+              <input type="checkbox" id="playful" name="mood" value="playful">
+              <label for="playful">Playful</label>
+            </div>
+            <div>
+              <input type="checkbox" id="calm" name="mood" value="calm">
+              <label for="calm">Calm</label>
+            </div>
+          </div>
+        <label for="photo">Photo</label>
+        <input type="file" accept="image/*" capture="camera">
+       <!-- <input type="photo" id="photo" name="photo">-->
+      </div>
+      <div class="tab">
+        <label for="notes">Notes</label>
+        <input type="notes" id="notes" name="notes">
+      </div>
+      <div id="button-overlay">
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+      </div>
+   </form>
+  </div>
+
+
+<script src="/JS/track.js"></script>
+</body>
+</html>

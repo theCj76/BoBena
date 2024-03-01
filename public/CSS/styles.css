@@ -1,0 +1,19 @@
+@import 'globals.css';
+
+/* Home page */
+@import '/CSS/homepage/hero.css';
+@import '/CSS/homepage/header.css';
+@import '/CSS/homepage/block.css';
+@import '/CSS/homepage/display.css';
+@import '/CSS/homepage/waitlist.css';
+@import '/CSS/homepage/footer.css';
+
+/* Register page */
+@import 'register.css';
+
+/* Login page */
+@import 'login.css';
+
+/* Track page */
+@import 'track.css';
+

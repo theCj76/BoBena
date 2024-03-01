@@ -1,0 +1,121 @@
+.display {
+    background-color: #fff;
+    padding: 2rem;
+
+    
+    .display-block {
+  
+        .discover {
+        
+            #clip {
+             color: #6671ee;
+
+            }
+
+            #small-title{
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+                font-size: 2.25rem;
+
+            }
+
+            p#small-des {
+                color:#6B7280
+
+            }
+
+            li {
+                list-style: none;
+                list-style-image: none;
+            }
+
+            #list {
+                display: flex;
+                align-items: center;
+                column-gap: 0.5rem;
+            }
+ 
+            .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            font-size: 1.5rem;
+            color: #fff;
+            padding: .5rem;
+            border-radius: 5px;
+            background-color: #6671ee;
+            
+
+            }
+
+
+            h4 {
+                font-size: 1.2rem;
+                width: 70%;
+                margin-bottom: 1rem;
+            }
+
+            p#desc {
+                color:#6B7280;
+                padding-left: 3rem
+            }
+
+        }
+    }
+
+
+    .display-photo {
+        display: none; 
+    
+    }
+
+    .additional {
+        padding-bottom: 3rem;
+    }
+        
+        @media (min-width: 900px) { /*mobile-first approach */
+        
+            .display-photo {
+                display: flex;
+                justify-content: center;
+
+
+                #square {
+                        bottom: -75%;
+                        width: 20rem;
+                        height: 10rem;
+                        transform: rotate(10deg);
+                        position: absolute;
+                        background-color: #6671ee;
+                        border-radius: 10px;
+                        opacity: 0.7;
+                }
+                
+            
+            }
+        
+            .display-photo img {
+                max-width: 100%;
+                max-height: 25rem; 
+                z-index: 1;
+                border-radius: 5px;
+            }
+
+            #rectangle {
+                bottom: -160%;
+                width: 20rem;
+                height: 10rem;
+                transform: rotate(10deg);
+                position: absolute;
+                background-color: #6671ee;
+                border-radius: 10px;
+                opacity: 0.7;
+
+            }
+
+        }
+    }
+

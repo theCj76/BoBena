@@ -1,0 +1,46 @@
+.block {
+    padding: 2rem;
+    text-align: center;
+
+
+    h2 {
+        color: #fff;
+        font-size: 3.5rem; 
+        font-weight: 800;
+        margin: 0;
+    }
+
+    #block-text {
+        color: #fff;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        color: #fff;
+
+
+        .block-stat { 
+            
+            h3  {
+                color: #fff;
+                font-weight: 800;
+                font-size: 3rem;
+        }
+
+
+    }
+
+        
+
+    }
+
+       
+}
