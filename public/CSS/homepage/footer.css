@@ -13,7 +13,7 @@ footer .foot {
 footer .foot .logo-footer h3 {
     color: #6671ee;
     font-size: 2rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
 }
 
 footer .foot .logo-footer p {
@@ -27,13 +27,10 @@ footer .foot .links {
 
 footer .foot .links p {
     color: #6671ee;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.2rem
 }
 
-footer .foot .links p:hover {
-    cursor: pointer;
-    font-weight: 500;
-}
 
 @media (min-width: 900px) {
     /* mobile-first approach */
