@@ -25,7 +25,7 @@
 
 .display .display-block .discover #list {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     column-gap: 0.5rem;
 }
 
