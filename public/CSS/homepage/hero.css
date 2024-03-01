@@ -1,82 +1,68 @@
-
 .hero {
-        background-color: #fff;
-        padding: 4.5rem;
+    background-color: #fff;
+    padding: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catch .title {
+    width: 100%;
+}
+
+.catch .title h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.catch .title #kennel-title {
+    color: #6671ee;
+}
+
+.catch .title button {
+    color: #fff;
+    width: 100%;
+    font-size: 1.15rem;
+}
+
+.catch .title button:hover {
+    font-weight: 600;
+}
+
+.catch .title p {
+    color: #6B7280;
+    margin-top: 1rem;
+}
+
+.catch .home-photo {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    /* mobile-first approach */
+    .catch .hero {
+        height: 100vh;
+    }
+
+    .catch .home-photo {
         display: flex;
-        justify-content: center; 
-        align-items: center;
+        justify-content: center;
     }
-    
-    .catch {
 
-        .title {
-                width: 100%; 
-            
-            h1 {
-                font-size: 3rem; 
-                font-weight: 600;
-                
-            }
-            
-            #kennel-title {
-                color: #6671ee;
-            }
-            
-            button {
-                color: #fff;
-                width: 100%; 
-                font-size: 1.15rem; 
-
-              &:hover {
-                    font-weight: 600;
-            
-                }
-            }
-
-
-            p {
-                color: #6B7280;
-                margin-top: 1rem;
-            }
-
-
-        }
-            
-            .home-photo {
-                display: none; 
-            }
-            
-            @media (min-width: 900px) { /*mobile-first approach */
-
-                .hero {
-                    height: 100vh;
-                }
-            
-                .home-photo {
-                    display: flex;
-                    justify-content: center;
-
-                    span {
-                        top: 15%;
-                        left: 50%;
-                        position: absolute;
-                        background-color: #6671ee;
-                        width: 8rem;
-                        height: 4rem;
-                        border-radius: 10px;
-            
-
-                    }
-                }
-            
-                .home-photo img {
-                    max-width: 100%;
-                    max-height: 25rem; 
-                    z-index: 1;
-                    border-radius: 5px;
-                }
-            }
-            
+    .catch .home-photo span {
+        top: 15%;
+        left: 50%;
+        position: absolute;
+        background-color: #6671ee;
+        width: 8rem;
+        height: 4rem;
+        border-radius: 10px;
     }
-    
-   
+
+    .catch .home-photo img {
+        max-width: 100%;
+        max-height: 25rem;
+        z-index: 1;
+        border-radius: 5px;
+    }
+}
