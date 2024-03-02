@@ -1,9 +1,9 @@
 .hero {
     background-color: #fff;
-    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .catch .title {
@@ -11,7 +11,7 @@
 }
 
 .catch .title h1 {
-    font-size: 4rem;
+    font-size: 3.3rem;
     font-weight: 800;
 }
 
@@ -48,6 +48,10 @@
     
     .catch .hero {
         height: 100vh;
+    }
+
+    .catch .title h1 {
+        font-size: 4rem;
     }
 
     .catch .home-photo {
