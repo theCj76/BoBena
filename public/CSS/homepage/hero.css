@@ -1,6 +1,6 @@
 .hero {
     background-color: #fff;
-    padding: 4.5rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +41,11 @@
 
 @media (min-width: 900px) {
     /* mobile-first approach */
+
+    .hero {
+        padding: 4.5rem;
+    }
+    
     .catch .hero {
         height: 100vh;
     }
