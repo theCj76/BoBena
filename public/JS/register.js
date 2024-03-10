@@ -18,7 +18,7 @@ document.getElementById('register').addEventListener('click', function(event){
         const user = userCredential.user;
         console.log('User Signed up', user);
 
-       // window.location.href = "track.html";
+       window.location.href = "track.html";
     })
     .catch ((err) => {
         console.log(err.code);
