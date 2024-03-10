@@ -1,18 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
 import { getFirestore, addDoc } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
 import { collection } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
+import { Config } from "/JS/config.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCzvDXN4inmWYvH2yAk5QrnOj2lhdcbOUQ",
-  authDomain: "bobena-81edb.firebaseapp.com",
-  projectId: "bobena-81edb",
-  storageBucket: "bobena-81edb.appspot.com",
-  messagingSenderId: "411925308524",
-  appId: "1:411925308524:web:59db78d765a9febc536449",
-  measurementId: "G-X35WNJ5JGK"
-};
-
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(Config);
 
 const db = getFirestore(app);
 
