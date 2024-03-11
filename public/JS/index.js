@@ -1,11 +1,5 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
-import { getFirestore, addDoc } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
-import { collection } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
-import { Config } from "/JS/config.js";
+import { db, addDoc, collection} from "/JS/firebase.js";
 
-const app = initializeApp(Config);
-
-const db = getFirestore(app);
 
 document.getElementById("waitlistForm").addEventListener("submit", async function(event) {
   event.preventDefault();
@@ -23,7 +17,6 @@ document.getElementById("waitlistForm").addEventListener("submit", async functio
     console.log("Email address added successfully!");
     emailInput.value = ""; 
 
-    //displays overlay only when form successful
     displayOverlayAndPopup();
   } catch (error) {
     console.error("Error adding email address:", error);
@@ -58,7 +51,7 @@ function closeOverlayAndPopup() {
 }
 
 document.getElementById("close").addEventListener("click", function() {
-  closeOverlayAndPopup(); // Call the function to close overlay and popup
+  closeOverlayAndPopup(); 
 });
 
 
