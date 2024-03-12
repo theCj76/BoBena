@@ -1,5 +1,6 @@
 import { auth, addDoc, collection } from "/JS/firebase.js";
 
+
 // Function to submit pet report
 async function submitPetReport(reportData) {
     // Get current user's UID
@@ -19,6 +20,7 @@ async function submitPetReport(reportData) {
         throw error; // Rethrow the error to handle it in the calling code
     }
 }
+
 
 // Get the form element
 const petReportForm = document.getElementById("regForm");
@@ -59,18 +61,26 @@ petReportForm.addEventListener("submit", async (e) => {
 
 
 // Questions
-var currentTab = 0;
-showTab(currentTab);
+
+function handleNextButtonClick() {
+    nextPrev(1);
+}
+
+document.getElementById("nextBtn").addEventListener("click", handleNextButtonClick);
+
+function handleBackButtonClick() {
+    nextPrev(-1);
+}
+
+document.getElementById("prevBtn").addEventListener("click", handleBackButtonClick);
 
 function showTab(n) {
     var x = document.getElementsByClassName("tab");
 
-    // Hide all tabs
     for (var i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
 
-    // Show the current tab
     x[n].style.display = "block";
 
     if (n == 0) {
@@ -86,27 +96,10 @@ function showTab(n) {
     }
 }
 
-// Removes invalid class field 
 function removeInvalidClass(input) {
     if (input.value.trim() !== "" && input.classList.contains("invalid")) {
         input.classList.remove("invalid");
     }
-}
-
-
-//Checks input to validate
-function nextPrev(n) {
-    var x = document.getElementsByClassName("tab");
-    if (n > 0 && !validateForm()) {
-        return false;
-    }
-    currentTab = currentTab + n;
-
-    if (currentTab >= x.length) {
-        document.getElementById("regForm").submit();
-        return false;
-    }
-    showTab(currentTab);
 }
 
 function validateForm() {
@@ -122,6 +115,20 @@ function validateForm() {
     return valid;
 }
 
+function nextPrev(n) {
+    var x = document.getElementsByClassName("tab");
+    if (n > 0 && !validateForm()) {
+        return false;
+    }
+    currentTab = currentTab + n;
+
+    if (currentTab >= x.length) {
+        document.getElementById("regForm").submit();
+        return false;
+    }
+    showTab(currentTab);
+}
+
 var inputFields = document.querySelectorAll('.tab input[required]');
 inputFields.forEach(function(input) {
     input.addEventListener('input', function() {
@@ -129,3 +136,5 @@ inputFields.forEach(function(input) {
     });
 });
 
+var currentTab = 0;
+showTab(currentTab);
