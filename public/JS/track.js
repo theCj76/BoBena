@@ -1,63 +1,37 @@
-import { auth, addDoc, collection } from "/JS/firebase.js";
+import { auth, db, addDoc, collection } from "/JS/firebase.js";
 
+document.getElementById("nextBtn").addEventListener("click", async function(event) {
+    event.preventDefault();
 
-// Function to submit pet report
-async function submitPetReport(reportData) {
-    // Get current user's UID
-    const userId = auth.currentUser.uid;
-
-    try {
-        // Access Firestore and add the pet report document
-        const docRef = await addDoc(collection(firestore, "petReports"), {
-            ...reportData,
-            userId: userId  // Associate report with user
-        });
-
-        console.log("Pet report added with ID: ", docRef.id);
-        return docRef.id; // Return the ID of the newly added document
-    } catch (error) {
-        console.error("Error adding pet report: ", error);
-        throw error; // Rethrow the error to handle it in the calling code
-    }
-}
-
-
-// Get the form element
-const petReportForm = document.getElementById("regForm");
-
-petReportForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    
-    // Gather data from form
     const petName = document.getElementById("pet").value;
     const time = document.getElementById("time").value;
-    
-    // Gather selected radio button value for feeding
-    let feed;
-    const feedOptions = document.getElementsByName("feed");
-    for (const option of feedOptions) {
-        if (option.checked) {
-            feed = option.value;
-            break;
-        }
+
+    if (petName === "") {
+        alert("Please enter your pet's name.");
+        return;
     }
 
-    // Construct the report data object
-    const reportData = {
-        petName: petName,
-        time: time,
-        feed: feed
-    };
-
     try {
-        // Submit pet report
-        await submitPetReport(reportData);
-        alert("Pet report submitted successfully!");
-        petReportForm.reset();
+        await submitPetReport(petName, time);
     } catch (error) {
         console.error("Error submitting pet report:", error);
     }
 });
+
+async function submitPetReport(petName, time) {
+    try {
+        const docRef = await addDoc(collection(db, "pet_reports"), {
+            pet_name: petName,
+            time: time,
+        });
+    } catch (error) {
+        console.error("Error adding document:", error);
+        throw error; 
+    }
+}
+
+    // Get current user's UID
+   // const userId = auth.currentUser.uid;
 
 
 // Questions
