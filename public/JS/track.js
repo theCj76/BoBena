@@ -3,6 +3,8 @@ import { auth, db, addDoc, collection } from "/JS/firebase.js";
 document.getElementById("nextBtn").addEventListener("click", async function(event) {
     event.preventDefault();
 
+
+    const userID = auth.currentUser.uid;
     const petName = document.getElementById("pet").value;
     const time = document.getElementById("time").value;
 
@@ -12,27 +14,25 @@ document.getElementById("nextBtn").addEventListener("click", async function(even
     }
 
     try {
-        await submitPetReport(petName, time);
+        await submitPetReport(userID, petName, time);
     } catch (error) {
         console.error("Error submitting pet report:", error);
     }
 });
 
-async function submitPetReport(petName, time) {
+async function submitPetReport(userID, petName, time) {
     try {
-        const docRef = await addDoc(collection(db, "pet_reports"), {
+       const docRef = await addDoc(collection(db, "user", userID, "pet_reports"), {
             pet_name: petName,
             time: time,
+            userId: userID,
         });
+        console.log("Document written with ID: ", docRef.id);
     } catch (error) {
         console.error("Error adding document:", error);
         throw error; 
     }
 }
-
-    // Get current user's UID
-   // const userId = auth.currentUser.uid;
-
 
 // Questions
 
