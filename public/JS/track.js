@@ -5,8 +5,23 @@ document.getElementById("nextBtn").addEventListener("click", async function(even
 
 
     const userID = auth.currentUser.uid;
+
     const petName = document.getElementById("pet").value;
     const time = document.getElementById("time").value;
+
+    const selectedFeedingOption = document.querySelector('input[name="feed"]:checked')
+    const food = selectedFeedingOption ? selectedFeedingOption.value : null;
+    const meds = document.getElementById("meds").value;
+
+    const selectedBathroomOption = document.querySelector('input[name="bathroom"]:checked')
+    const bathroom = selectedBathroomOption ? selectedBathroomOption.value : null;
+    const selectedActivityOption = document.querySelector('input[name="activity"]:checked')
+    const activity = selectedActivityOption ? selectedActivityOption.value : null;
+
+    const selectedMoodOption = document.querySelector('input[name="mood"]:checked')
+    const mood = selectedMoodOption ? selectedMoodOption.value : null;
+//photo input goes here 
+    const notes = document.getElementById("notes").value;
 
     if (petName === "") {
         alert("Please enter your pet's name.");
@@ -14,18 +29,25 @@ document.getElementById("nextBtn").addEventListener("click", async function(even
     }
 
     try {
-        await submitPetReport(userID, petName, time);
+        await submitPetReport(userID, petName, time, food, meds, bathroom, activity, mood, notes);
     } catch (error) {
         console.error("Error submitting pet report:", error);
     }
 });
 
-async function submitPetReport(userID, petName, time) {
+async function submitPetReport(userID, petName, time, food, meds, bathroom, activity, mood, notes) {
     try {
        const docRef = await addDoc(collection(db, "user", userID, "pet_reports"), {
+            userId: userID,
             pet_name: petName,
             time: time,
-            userId: userID,
+            food: food,
+            meds : meds,
+            bathroom : bathroom,
+            activity : activity,
+            mood : mood,
+            notes : notes,
+            
         });
         console.log("Document written with ID: ", docRef.id);
     } catch (error) {
