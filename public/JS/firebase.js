@@ -3,7 +3,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js"; // Import from auth module
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
+import { collection, addDoc, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
 
 const Config = {
     apiKey: "AIzaSyCzvDXN4inmWYvH2yAk5QrnOj2lhdcbOUQ",
@@ -19,4 +19,4 @@ const app = initializeApp(Config);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-export { db, auth, createUserWithEmailAndPassword, collection, addDoc };
+export { db, auth, createUserWithEmailAndPassword, collection, addDoc, setDoc, doc, getDoc};
