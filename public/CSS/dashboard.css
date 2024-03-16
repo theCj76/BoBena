@@ -1,0 +1,20 @@
+.dashboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 5%;
+    padding: 2rem;
+
+}
+
+.dashboard button {
+    margin: 0;
+}
+
+.dashboard #report {
+    margin-bottom: 1rem;
+}
