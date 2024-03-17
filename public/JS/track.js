@@ -1,6 +1,5 @@
 import { auth, db, addDoc, collection, setDoc, doc } from "/JS/firebase.js";
 
-// Define a global variable to store the pet report ID
 let petReportId = null;
 
 document.getElementById("nextBtn").addEventListener("click", async function(event) {
@@ -46,7 +45,7 @@ document.getElementById("nextBtn").addEventListener("click", async function(even
 
 // Function to generate a unique ID for the pet report
 function generatePetReportId() {
-    return Date.now().toString(); // Using timestamp as a simple way to generate a unique ID
+    return Date.now().toString(); 
 }
 
 // Function to save the pet report ID
@@ -65,7 +64,6 @@ async function savePetReportId(userID, petReportId) {
 // Function to save the form data under the pet report ID
 async function saveFormData(userID, petReportId, petName, time, food, meds, bathroom, activity, mood, notes) {
     try {
-        // Save the form data under the pet report ID in Firestore
         const petReportRef = doc(db, "user", userID, "pet_reports", petReportId);
         await setDoc(petReportRef, {
             userId: userID,
@@ -157,9 +155,7 @@ function nextPrev(n) {
     currentTab = currentTab + n;
 
     if (currentTab >= x.length) {
-        // Check if it's the last tab before submitting
         if (currentTab === x.length) {
-            // Check if it's the last tab
             if (!validateForm()) {
                 return false;
             }
@@ -169,7 +165,7 @@ function nextPrev(n) {
                 document.getElementById("regForm").submit();
             }
         }
-        return false; // Exit function to prevent further execution
+        return false; 
     }
     showTab(currentTab);
 }
